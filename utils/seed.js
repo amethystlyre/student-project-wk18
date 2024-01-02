@@ -40,6 +40,8 @@ connection.once('open', async () => {
   // Add students to the collection and await the results
   await Student.collection.insertMany(students);
 
+  //const studentID = Object.values(records.insertedIds);
+
   // Add courses to the collection and await the results
   await Course.collection.insertOne({
     courseName: 'UCLA',
@@ -49,6 +51,7 @@ connection.once('open', async () => {
 
   // Log out the seed data to indicate what should appear in the database
   console.table(students);
+  //console.log(studentID);
   console.info('Seeding complete! 🌱');
   process.exit(0);
 });
